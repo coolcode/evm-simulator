@@ -1,11 +1,10 @@
 import { ethers, parseEther } from 'ethers';
 import { BigNumber } from '@ethersproject/bignumber';
-import { TransactionResponse } from '@ethersproject/providers';
+import { Log, TransactionResponse } from '@ethersproject/providers';
 import { SimulationResult } from './entities/simulation-result';
 import { TransferEvent } from './entities/transfer-event';
 import { SimulationInput } from './entities/simulation-input';
-import { EventDecoder } from './event-decoder';
-import { Log } from '@ethersproject/abstract-provider/src.ts';
+import { EventDecoder } from './event-decoder'; 
 import { LocalEVMProvider } from './evm/local-evm-provider';
 
 export class Simulator {

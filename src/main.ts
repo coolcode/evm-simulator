@@ -34,6 +34,8 @@ const input: SimulationInput = {
 	value: options.value,
 };
 
+console.info("options:", options)
+
 const localEVMProvider = new GanacheEVMProvider(chainDef);
 new Simulator(localEVMProvider)
 	.simulate(input)

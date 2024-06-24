@@ -9,6 +9,10 @@ export class EventDecoder {
 	public async decode(): Promise<object> {
 		try {
 			const eventSignature = await this.fetchTopic(this.topics[0]);
+			if(!eventSignature){
+				return null
+			}
+			
 			const decoded = this.decodeEvent(eventSignature);
 
 			return {
@@ -41,6 +45,7 @@ export class EventDecoder {
 	private decodeEvent(eventSignature: string) {
 		const eventInterface = new ethers.Interface([`event ${eventSignature}`]);
 
+		console.info("eventSignature:", eventSignature)
 		const funcName = eventSignature.substring(0, eventSignature.indexOf('('));
 		const completeData = concat([...this.topics.splice(1), this.data]);
 

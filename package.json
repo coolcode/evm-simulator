@@ -19,7 +19,7 @@
     "build": "tsc",
     "format": "prettier ./src --write",
     "format:check": "prettier ./src --check",
-    "start": "node dist/src/main",
+    "dev": "ts-node src/main.ts",
     "lint": "eslint ./src --ext .ts --quiet",
     "lint:fix": "eslint ./src --ext .ts --fix",
     "test": "jest --coverage --passWithNoTests --runInBand --detectOpenHandles --forceExit || true",
